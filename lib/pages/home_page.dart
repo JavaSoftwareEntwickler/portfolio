@@ -3,6 +3,7 @@ import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/widgets/main_mobile.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/main_desktop.dart';
+import 'package:my_portfolio/widgets/project_card.dart';
 import 'package:my_portfolio/widgets/skills_desktop.dart';
 import 'package:my_portfolio/widgets/skills_mobile.dart';
 
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
-              //Main section
+              //Header section
               if (constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop()
               else
@@ -48,11 +49,14 @@ class _HomePageState extends State<HomePage> {
                     scaffoldKey.currentState?.openEndDrawer();
                   },
                 ),
+
+              //Main section
               if (constraints.maxWidth >= kMinDesktopWidth)
                 const MainDesktop()
               else
-                MainMobile(),
-              //Skills section
+                const MainMobile(),
+
+              //Start Skills section
               Container(
                 width: screenWidth,
                 padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
@@ -69,15 +73,37 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SizedBox(height: 50),
-                    if(constraints.maxWidth >= kMedDesktopWidth)
+                    if (constraints.maxWidth >= kMedDesktopWidth)
                       const SkillsDesktop()
                     else
                       const SkillsMobile(),
                   ],
                 ),
               ),
-              //Project section
-              Container(height: 500, width: double.maxFinite),
+              //End Skills section
+
+              //Start Project section
+              Container(
+                width: screenWidth,
+                padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
+                child: Column(
+                  children: [
+                    //Work prj Title
+                    const Text(
+                      "Work projects",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.whitePrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 50),
+                    //Create a Work prj cards
+                    ProjectCardWidget()
+
+                  ],
+                ),
+              ),
 
               //Contact section
               Container(
@@ -94,3 +120,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
