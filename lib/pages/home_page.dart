@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/nav_items.dart';
+import 'package:my_portfolio/widgets/site_logo.dart';
 
+import '../styles/style.dart';
 import '../widgets/header_desktop.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,7 +22,26 @@ class _HomePageState extends State<HomePage> {
         scrollDirection: Axis.vertical,
         children: [
           //Main section
-          HeaderDesktop(),
+          //HeaderDesktop(),
+          Container(
+            height: 50.0,
+            margin: EdgeInsets.fromLTRB(40, 5, 20, 5),
+            decoration: kHeaderDecoration,
+            child: Row(
+              children: [
+                SiteLogo(
+                  onTap: () {
+                    print('Logo tapped');
+                  },
+                ),
+                const Spacer(),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.menu),
+                ),
+              ],
+            ),
+          ),
           //Skills section
           Container(
             height: 500,
@@ -29,10 +50,7 @@ class _HomePageState extends State<HomePage> {
           ),
 
           //Project section
-          Container(
-            height: 500,
-            width: double.maxFinite,
-          ),
+          Container(height: 500, width: double.maxFinite),
 
           //Contact section
           Container(
@@ -42,12 +60,9 @@ class _HomePageState extends State<HomePage> {
           ),
 
           //Footer section
-          Container(
-            height: 500,
-            width: double.maxFinite,
-          ),
+          Container(height: 500, width: double.maxFinite),
         ],
-      )
+      ),
     );
   }
 }
