@@ -100,13 +100,18 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SizedBox(height: 50),
                     //Work prj cards
-                    Wrap(
-                      spacing: 25.0,
-                      runSpacing: 25.0,
-                      children: [
-                        for (var i = 0; i < workProjectUtils.length; i++)
-                          ProjectCardWidget(project: workProjectUtils[i]),
-                      ],
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: 900,
+                      ),
+                      child: Wrap(
+                        spacing: 25.0,
+                        runSpacing: 25.0,
+                        children: [
+                          for (var i = 0; i < workProjectUtils.length; i++)
+                            ProjectCardWidget(project: workProjectUtils[i]),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 80),
                     //Personal prj Title
@@ -120,13 +125,18 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SizedBox(height: 50),
                     //Personal prj cards
-                    Wrap(
-                      spacing: 25.0,
-                      runSpacing: 25.0,
-                      children: [
-                        for (var i = 0; i < hobbyProjectUtils.length; i++)
-                          ProjectCardWidget(project: hobbyProjectUtils[i]),
-                      ],
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: 900,
+                      ),
+                      child: Wrap(
+                        spacing: 25.0,
+                        runSpacing: 25.0,
+                        children: [
+                          for (var i = 0; i < hobbyProjectUtils.length; i++)
+                            ProjectCardWidget(project: hobbyProjectUtils[i]),
+                        ],
+                      ),
                     ),
                   ],
                 ),
