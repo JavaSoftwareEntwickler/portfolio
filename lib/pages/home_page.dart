@@ -1,13 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
-import 'package:my_portfolio/constants/nav_items.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
-import 'package:my_portfolio/widgets/site_logo.dart';
+import 'package:my_portfolio/widgets/main.dart';
 
 import '../constants/size.dart';
-import '../styles/style.dart';
 import '../widgets/header_desktop.dart';
 import '../widgets/header_mobile.dart';
 
@@ -22,12 +18,18 @@ class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
-          endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null : const DrawerMobile(),
+          endDrawer:
+              constraints.maxWidth >= kMinDesktopWidth
+                  ? null
+                  : const DrawerMobile(),
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
@@ -41,6 +43,7 @@ class _HomePageState extends State<HomePage> {
                     scaffoldKey.currentState?.openEndDrawer();
                   },
                 ),
+              MainDesktop(),
               //Skills section
               Container(
                 height: 500,
