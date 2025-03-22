@@ -5,6 +5,7 @@ import 'package:my_portfolio/widgets/site_logo.dart';
 
 import '../styles/style.dart';
 import '../widgets/header_desktop.dart';
+import '../widgets/header_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,24 +24,9 @@ class _HomePageState extends State<HomePage> {
         children: [
           //Main section
           //HeaderDesktop(),
-          Container(
-            height: 50.0,
-            margin: EdgeInsets.fromLTRB(40, 5, 20, 5),
-            decoration: kHeaderDecoration,
-            child: Row(
-              children: [
-                SiteLogo(
-                  onTap: () {
-                    print('Logo tapped');
-                  },
-                ),
-                const Spacer(),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.menu),
-                ),
-              ],
-            ),
+          HeaderMobile(
+            onLogoTap: () {},
+            onMenuTap: () {},
           ),
           //Skills section
           Container(
