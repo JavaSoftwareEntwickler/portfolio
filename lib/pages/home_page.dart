@@ -53,7 +53,6 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                               color: CustomColor.whitePrimary,
-
                             ),
                         )
                     ),
