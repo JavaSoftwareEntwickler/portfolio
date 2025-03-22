@@ -24,7 +24,9 @@ class HeaderDesktop extends StatelessWidget {
       child: Row(
         children: [
           // Logo
-          SiteLogo(),
+          SiteLogo(onTap: (){
+
+          }),
           Spacer(),
 // Navigation bar
           for (int i = 0; i < navItems.length; i++)
