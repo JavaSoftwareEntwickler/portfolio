@@ -6,6 +6,7 @@ import 'package:my_portfolio/constants/nav_items.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/site_logo.dart';
 
+import '../constants/size.dart';
 import '../styles/style.dart';
 import '../widgets/header_desktop.dart';
 import '../widgets/header_mobile.dart';
@@ -26,12 +27,12 @@ class _HomePageState extends State<HomePage> {
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
-          endDrawer: constraints.maxWidth >= 600.0 ? null : const DrawerMobile(),
+          endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null : const DrawerMobile(),
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
               //Main section
-              if (constraints.maxWidth >= 600.0)
+              if (constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop()
               else
                 HeaderMobile(
