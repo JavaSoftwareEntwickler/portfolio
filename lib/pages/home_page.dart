@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
+import 'package:my_portfolio/widgets/ProjectsWidget.dart';
 import 'package:my_portfolio/widgets/main_mobile.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/main_desktop.dart';
-import 'package:my_portfolio/widgets/project_card.dart';
 import 'package:my_portfolio/widgets/skills_desktop.dart';
 import 'package:my_portfolio/widgets/skills_mobile.dart';
 
 import '../constants/size.dart';
-import '../constants/skill_items.dart';
-import '../utils/project_utils.dart';
 import '../widgets/header_desktop.dart';
 import '../widgets/header_mobile.dart';
 
@@ -82,66 +80,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               //End Skills section
-
+              SizedBox(height: 30,),
               //Start Project section
-              Container(
-                width: screenWidth,
-                padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
-                child: Column(
-                  children: [
-                    //Work prj Title
-                    const Text(
-                      "Work projects",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColor.whitePrimary,
-                      ),
-                    ),
-                    const SizedBox(height: 50),
-                    //Work prj cards
-                    ConstrainedBox(
-                      constraints: BoxConstraints(
-                        maxWidth: 900,
-                      ),
-                      child: Wrap(
-                        spacing: 25.0,
-                        runSpacing: 25.0,
-                        children: [
-                          for (var i = 0; i < workProjectUtils.length; i++)
-                            ProjectCardWidget(project: workProjectUtils[i]),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 80),
-                    //Personal prj Title
-                    const Text(
-                      "Work projects",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColor.whitePrimary,
-                      ),
-                    ),
-                    const SizedBox(height: 50),
-                    //Personal prj cards
-                    ConstrainedBox(
-                      constraints: BoxConstraints(
-                        maxWidth: 900,
-                      ),
-                      child: Wrap(
-                        spacing: 25.0,
-                        runSpacing: 25.0,
-                        children: [
-                          for (var i = 0; i < hobbyProjectUtils.length; i++)
-                            ProjectCardWidget(project: hobbyProjectUtils[i]),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
+              ProjectsWidget(),
               //Contact section
               Container(
                 height: 500,
