@@ -4,6 +4,7 @@ import 'package:my_portfolio/widgets/main_mobile.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/main_desktop.dart';
 import 'package:my_portfolio/widgets/skills_desktop.dart';
+import 'package:my_portfolio/widgets/skills_mobile.dart';
 
 import '../constants/size.dart';
 import '../constants/skill_items.dart';
@@ -68,7 +69,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SizedBox(height: 50),
-                    const SkillsDesktop()
+                    if(constraints.maxWidth >= kMedDesktopWidth)
+                      const SkillsDesktop()
+                    else
+                      const SkillsMobile(),
                   ],
                 ),
               ),
