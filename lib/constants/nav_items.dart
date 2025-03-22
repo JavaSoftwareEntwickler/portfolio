@@ -10,8 +10,13 @@ List<String> navItems = [
 
 List<IconData> navIcons = [
   Icons.home,
-  Icons.android,
-  Icons.back_hand,
+  Icons.handyman_outlined,
+  Icons.apps,
   Icons.web,
   Icons.quick_contacts_mail,
+];
+
+List<IconData> mobileIcons = [
+  Icons.android,
+  Icons.apple,
 ];
