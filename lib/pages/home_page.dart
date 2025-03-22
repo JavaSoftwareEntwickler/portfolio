@@ -9,6 +9,7 @@ import 'package:my_portfolio/widgets/skills_mobile.dart';
 
 import '../constants/size.dart';
 import '../constants/skill_items.dart';
+import '../utils/project_utils.dart';
 import '../widgets/header_desktop.dart';
 import '../widgets/header_mobile.dart';
 
@@ -99,8 +100,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SizedBox(height: 50),
                     //Create a Work prj cards
-                    ProjectCardWidget()
-
+                    for (var i = 0; i < workProjectUtils.length; i++)
+                      ProjectCardWidget(
+                        project: workProjectUtils[i],
+                      ),
                   ],
                 ),
               ),
