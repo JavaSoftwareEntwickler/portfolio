@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
-import 'package:my_portfolio/widgets/MainMobile.dart';
+import 'package:my_portfolio/widgets/main_mobile.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
-import 'package:my_portfolio/widgets/main.dart';
+import 'package:my_portfolio/widgets/main_desktop.dart';
+import 'package:my_portfolio/widgets/skills_desktop.dart';
 
 import '../constants/size.dart';
+import '../constants/skill_items.dart';
 import '../widgets/header_desktop.dart';
 import '../widgets/header_mobile.dart';
 
@@ -51,11 +53,25 @@ class _HomePageState extends State<HomePage> {
                 MainMobile(),
               //Skills section
               Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
+                width: screenWidth,
+                padding: EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.bgLight1,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Text(
+                      "What I can do",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.whitePrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 50),
+                    const SkillsDesktop()
+                  ],
+                ),
               ),
-
               //Project section
               Container(height: 500, width: double.maxFinite),
 
@@ -65,7 +81,6 @@ class _HomePageState extends State<HomePage> {
                 width: double.maxFinite,
                 color: Colors.blueGrey,
               ),
-
               //Footer section
               Container(height: 500, width: double.maxFinite),
             ],
