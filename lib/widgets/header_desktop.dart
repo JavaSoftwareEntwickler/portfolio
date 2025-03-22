@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/widgets/site_logo.dart';
 
 import '../constants/colors.dart';
 import '../constants/nav_items.dart';
@@ -22,15 +23,8 @@ class HeaderDesktop extends StatelessWidget {
       ),
       child: Row(
         children: [
-// Logo
-          Text(
-            'MM',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.underline,
-              color: CustomColor.yellowSecondary,
-            ),),
+          // Logo
+          SiteLogo(),
           Spacer(),
 // Navigation bar
           for (int i = 0; i < navItems.length; i++)
