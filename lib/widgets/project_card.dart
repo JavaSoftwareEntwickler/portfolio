@@ -11,13 +11,14 @@ class ProjectCardWidget extends StatelessWidget {
     required this.project
   });
   final ProjectUtils project;
+  final double width = 260;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: 280,
-      width: 250,
+      height: 290,
+      width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: CustomColor.bgLight2,
@@ -31,7 +32,7 @@ class ProjectCardWidget extends StatelessWidget {
           Image.asset(
             project.image,
             height: 140,
-            width: 250,
+            width: width,
             fit: BoxFit.cover,
           ),
           // Project Card Title
@@ -50,7 +51,7 @@ class ProjectCardWidget extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
             child: Text(
               project.subtitle,
-              style: TextStyle(fontSize: 10, color: CustomColor.whiteSecondary),
+              style: TextStyle(fontSize: 12, color: CustomColor.whiteSecondary),
             ),
           ),
           const Spacer(),

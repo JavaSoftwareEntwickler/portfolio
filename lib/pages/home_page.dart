@@ -99,11 +99,35 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SizedBox(height: 50),
-                    //Create a Work prj cards
-                    for (var i = 0; i < workProjectUtils.length; i++)
-                      ProjectCardWidget(
-                        project: workProjectUtils[i],
+                    //Work prj cards
+                    Wrap(
+                      spacing: 25.0,
+                      runSpacing: 25.0,
+                      children: [
+                        for (var i = 0; i < workProjectUtils.length; i++)
+                          ProjectCardWidget(project: workProjectUtils[i]),
+                      ],
+                    ),
+                    const SizedBox(height: 80),
+                    //Personal prj Title
+                    const Text(
+                      "Work projects",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.whitePrimary,
                       ),
+                    ),
+                    const SizedBox(height: 50),
+                    //Personal prj cards
+                    Wrap(
+                      spacing: 25.0,
+                      runSpacing: 25.0,
+                      children: [
+                        for (var i = 0; i < hobbyProjectUtils.length; i++)
+                          ProjectCardWidget(project: hobbyProjectUtils[i]),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -123,4 +147,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
