@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
+import 'package:my_portfolio/widgets/custom_text_field.dart';
 import 'package:my_portfolio/widgets/projects_section.dart';
 import 'package:my_portfolio/widgets/main_mobile.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
@@ -38,7 +40,7 @@ class _HomePageState extends State<HomePage> {
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
-
+              /*
               //Header section
               if (constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop()
@@ -80,18 +82,67 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              //End Skills section
 
-              SizedBox(height: 30,),
+              //End Skills section
+              SizedBox(height: 30),
 
               //Start Project section
               ProjectsSection(),
 
+              */
+              SizedBox(height: 30),
+
               //Contact section
               Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.bgLight1,
+                child: Column(
+                  children: [
+                    //Title Contact form
+                    Text(
+                      "Get in touch",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                        color: CustomColor.whitePrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 50),
+                    Row(
+                      children: [
+                        Flexible(
+                            child: CustomTextField(
+                                hintText: "Your name"
+                            )
+                        ),
+                        const SizedBox(width: 20),
+                        Flexible(
+                          child: CustomTextField(
+                              hintText: "Your email"
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 20),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: CustomTextField(
+                            hintText: "Your message",
+                            maxLines: 10,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 25),
+                    // Submit button
+                    SizedBox(
+                        width: double.maxFinite,
+                        child: ElevatedButton(
+                            onPressed: (){}, child: Text("Send message"))),
+                  ],
+                ),
               ),
 
               //Footer section
