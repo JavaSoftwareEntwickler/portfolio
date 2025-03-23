@@ -11,7 +11,7 @@ class ProjectCardWidget extends StatelessWidget {
     required this.project
   });
   final ProjectUtils project;
-  final double width = 260;
+  final double width = 282;
 
   @override
   Widget build(BuildContext context) {

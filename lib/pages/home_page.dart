@@ -40,7 +40,6 @@ class _HomePageState extends State<HomePage> {
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
-              /*
               //Header section
               if (constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop()
@@ -89,7 +88,6 @@ class _HomePageState extends State<HomePage> {
               //Start Project section
               ProjectsSection(),
 
-              */
               SizedBox(height: 30),
 
               //Contact section
@@ -108,39 +106,49 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SizedBox(height: 50),
-                    Row(
-                      children: [
-                        Flexible(
-                            child: CustomTextField(
-                                hintText: "Your name"
-                            )
-                        ),
-                        const SizedBox(width: 20),
-                        Flexible(
-                          child: CustomTextField(
-                              hintText: "Your email"
+                    ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: 900),
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: CustomTextField(hintText: "Your name"),
                           ),
-                        ),
-                      ],
+                          const SizedBox(width: 20),
+                          Flexible(
+                            child: CustomTextField(hintText: "Your email"),
+                          ),
+                        ],
+                      ),
                     ),
 
                     const SizedBox(height: 20),
-                    Row(
-                      children: [
-                        Flexible(
-                          child: CustomTextField(
-                            hintText: "Your message",
-                            maxLines: 10,
+                    ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: 900),
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: CustomTextField(
+                              hintText: "Your message",
+                              maxLines: 10,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 25),
                     // Submit button
-                    SizedBox(
+                    ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: 900),
+                      child: SizedBox(
                         width: double.maxFinite,
                         child: ElevatedButton(
-                            onPressed: (){}, child: Text("Send message"))),
+                          onPressed: () {},
+                          child: Text("Send message"),
+                        ),
+                      ),
+                    ),
+
+                    //SNS icons
                   ],
                 ),
               ),
