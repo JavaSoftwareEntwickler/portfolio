@@ -5,8 +5,8 @@ import '../constants/colors.dart';
 import '../utils/project_utils.dart';
 
 
-class ProjectsWidget extends StatelessWidget {
-  const ProjectsWidget({
+class ProjectsSection extends StatelessWidget {
+  const ProjectsSection({
     super.key,
   });
 

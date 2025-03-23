@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
-import 'package:my_portfolio/widgets/ProjectsWidget.dart';
+import 'package:my_portfolio/widgets/projects_section.dart';
 import 'package:my_portfolio/widgets/main_mobile.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/main_desktop.dart';
@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
+
               //Header section
               if (constraints.maxWidth >= kMinDesktopWidth)
                 const HeaderDesktop()
@@ -80,15 +81,19 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               //End Skills section
+
               SizedBox(height: 30,),
+
               //Start Project section
-              ProjectsWidget(),
+              ProjectsSection(),
+
               //Contact section
               Container(
                 height: 500,
                 width: double.maxFinite,
                 color: Colors.blueGrey,
               ),
+
               //Footer section
               Container(height: 500, width: double.maxFinite),
             ],
